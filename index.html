@@ -28,7 +28,7 @@
             }
         }
     </script>
-
+    
     <style>
         /* CSS Variables for Dynamic Customization */
         :root {
@@ -175,7 +175,6 @@
 
     <section id="about" class="py-24 px-6 max-w-6xl mx-auto">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
-            
             <div>
                 <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="text-4xl md:text-5xl font-extrabold mb-8 leading-tight text-white">
                     Crafting tools<br>
@@ -193,7 +192,6 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                
                 <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="bg-neoBg shadow-neo-out p-8 rounded-3xl hover-pop hover-neon-p border border-transparent transition-all duration-400 group">
                     <div class="shadow-neo-in p-4 rounded-2xl w-fit mb-6"><i class="ph-bold ph-code text-2xl text-neon-p transition-colors duration-300"></i></div>
                     <h3 class="text-xl font-bold mb-4 text-gray-200">Frontend</h3>
@@ -229,12 +227,11 @@
                         <span class="shadow-neo-in px-3 py-1.5 rounded-lg text-xs font-bold text-gray-500 cursor-default">Always learning</span>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <section  id="projects" class="py-24 px-6 max-w-6xl mx-auto">
+    <section id="projects" class="py-24 px-6 max-w-6xl mx-auto">
         <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="text-center mb-16">
             <h2 class="text-4xl md:text-5xl font-extrabold text-gray-100 mb-4 drop-shadow-md">Selected Work</h2>
             <div class="h-1 w-20 mx-auto rounded-full" style="background: rgb(var(--color-primary)); box-shadow: 0 0 10px rgb(var(--color-primary));"></div>
@@ -312,7 +309,6 @@
             <h2 class="text-4xl md:text-5xl font-extrabold text-gray-100 mb-4 drop-shadow-md">What I Offer</h2>
             <div class="h-1 w-20 mx-auto rounded-full" style="background: rgb(var(--color-secondary)); box-shadow: 0 0 10px rgb(var(--color-secondary));"></div>
         </div>
-        
 
         <div class="grid md:grid-cols-2 gap-8 text-left">
             <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="bg-neoBg shadow-neo-out p-8 rounded-3xl flex gap-6 items-center hover-pop hover-neon-p border border-transparent transition-all duration-400 cursor-default group">
@@ -339,7 +335,7 @@
                 </div>
             </div>
 
-            <div  data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="bg-neoBg shadow-neo-out p-8 rounded-3xl flex gap-6 items-center hover-pop hover-neon-s border border-transparent transition-all duration-400 cursor-default group">
+            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="bg-neoBg shadow-neo-out p-8 rounded-3xl flex gap-6 items-center hover-pop hover-neon-s border border-transparent transition-all duration-400 cursor-default group">
                 <div class="shadow-neo-in p-5 rounded-2xl shrink-0"><i class="ph-fill ph-layout text-4xl text-neon-s transition-colors duration-300"></i></div>
                 <div>
                     <h3 class="text-xl font-bold mb-2 text-gray-200">Dashboard UI</h3>
@@ -385,7 +381,24 @@
         <p class="mt-2 text-xs">&copy; 2026 Soumen. All rights reserved.</p>
     </footer>
 
+    <a href="https://forms.gle/5t8QHtd2dQmjgNB46" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-[90] bg-neoBg shadow-neo-out p-4 rounded-full text-neon-p hover-pop hover-neon-p border border-transparent transition-all duration-300 group flex items-center justify-center" title="Rate my Portfolio!">
+        <i class="ph-fill ph-star text-3xl group-hover:animate-pulse"></i>
+    </a>
+
+    <div id="siteFeedbackModal" class="fixed inset-0 z-[200] flex items-center justify-center hidden bg-[#0d0f12]/80 backdrop-blur-md transition-opacity duration-300 opacity-0">
+        <div class="bg-neoBg shadow-neo-out p-8 rounded-[30px] w-[90%] max-w-sm relative border border-neoLightShadow/20 transform scale-95 transition-transform duration-300" id="siteFeedbackContent">
+            
+            
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
     <script>
+        // 1. Initialize Scroll Animations (AOS)
+        AOS.init();
+
+        // 2. Theme Customizer Logic
         function toggleCustomizer() {
             document.getElementById('customizer').classList.toggle('customizer-open');
         }
@@ -399,9 +412,5 @@
             }
         }
     </script>
-      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
 </body>
 </html>
