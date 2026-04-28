@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KnotX | Project Details</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="icon" href="favicon.ico">
+    <script>
+        tailwind.config = { theme: { extend: { colors: { neoBg: '#16181d', neoDarkShadow: '#0d0f12', neoLightShadow: '#1f2128', }, boxShadow: { 'neo-out': '8px 8px 16px #0d0f12, -8px -8px 16px #1f2128', 'neo-in': 'inset 5px 5px 10px #0d0f12, inset -5px -5px 10px #1f2128', } } } }
+    </script>
+    <style>
+        :root { --color-primary: 0, 255, 255; --color-secondary: 176, 38, 255; }
+        body { background-color: #16181d; color: #a0aec0; overflow-x: hidden; font-family: 'Poppins', sans-serif;}
+        .text-neon-p { color: rgb(var(--color-primary)); text-shadow: 0 0 12px rgba(var(--color-primary), 0.7); }
+        .text-neon-s { color: rgb(var(--color-secondary)); text-shadow: 0 0 12px rgba(var(--color-secondary), 0.7); }
+        .text-gradient-custom { background: linear-gradient(to right, rgb(var(--color-primary)), rgb(var(--color-secondary))); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hover-pop { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); will-change: transform; }
+        .hover-pop:hover { transform: translateY(-6px) scale(1.03); z-index: 10; }
+        .hover-neon-s:hover { box-shadow: 0 10px 25px rgba(var(--color-secondary), 0.25), 8px 8px 16px #0d0f12, -8px -8px 16px #1f2128 !important; border-color: rgba(var(--color-secondary), 0.4) !important; color: rgb(var(--color-secondary)) !important; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl bg-neoBg shadow-neo-out rounded-full px-6 py-4 flex justify-between items-center z-50 border border-neoLightShadow/20">
+        <a href="index.html" class="flex items-center gap-2 text-sm font-bold text-gray-400 hover:text-neon-s transition-colors hover-pop">
+            <i class="ph-bold ph-arrow-left text-lg"></i> Back
+        </a>
+        <a href="index.html" class="text-xl font-bold text-white tracking-wider hover:scale-105 transition-transform duration-300">
+            Soumen<span class="text-neon-p">.dev</span>
+        </a>
+    </nav>
+
+    <section class="pt-40 px-6 max-w-6xl mx-auto text-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+        <div class="shadow-neo-in px-5 py-2 rounded-full w-fit mx-auto text-xs font-bold mb-6 tracking-widest uppercase flex items-center gap-2 text-neon-s">
+            <i class="ph-fill ph-squares-four"></i> Utility System
+        </div>
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 text-white"><span class="text-gradient-custom">KnotX</span></h1>
+        <p class="text-gray-400 max-w-3xl mx-auto text-lg mb-8 font-medium">A modular desktop tool system designed for productivity and control. Bring scattered utilities into one focused workspace.</p>
+        
+        <div class="flex justify-center gap-3 flex-wrap mb-16">
+            <span class="shadow-neo-out px-4 py-2 rounded-lg text-xs font-bold text-gray-400">Python</span>
+            <span class="shadow-neo-out px-4 py-2 rounded-lg text-xs font-bold text-gray-400">Kotlin</span>
+        </div>
+    </section>
+
+    <section class="px-6 max-w-5xl mx-auto mb-24" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+        <div class="bg-neoBg shadow-neo-in p-4 md:p-6 rounded-[40px] relative">
+            <div class="overflow-hidden rounded-[24px] relative bg-neoDarkShadow/50 aspect-video flex items-center">
+                
+                <div id="carouselTrack" class="carousel-track flex w-full h-full">
+                    <div class="min-w-full h-full flex items-center justify-center shrink-0">
+                        <video controls class="w-full h-full object-cover" poster="https://via.placeholder.com/1280x720/16181d/00ffff?text=Video+Thumbnail">
+                            <source src="demo-video.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="min-w-full h-full flex items-center justify-center shrink-0">
+                        <img src="KnotX0.jpg" alt="Screenshot 1" class="w-full h-full object-contain">
+                    </div>
+                    <div class="min-w-full h-full flex items-center justify-center shrink-0">
+                        <img src="KnotX01.jpg" alt="Screenshot 2" class="w-full h-full object-contain">
+                    </div>
+                    <div class="min-w-full h-full flex items-center justify-center shrink-0">
+                        <img src="KnotX04.png" alt="Screenshot 3" class="w-full h-full object-contain">
+                    </div>
+                </div>
+
+                <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 shadow-neo-out bg-neoBg p-3 rounded-full text-gray-400 hover:text-neon-p hover-neon-p transition-all z-10 hover-pop">
+                    <i class="ph-bold ph-caret-left text-xl"></i>
+                </button>
+                <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 shadow-neo-out bg-neoBg p-3 rounded-full text-gray-400 hover:text-neon-p hover-neon-p transition-all z-10 hover-pop">
+                    <i class="ph-bold ph-caret-right text-xl"></i>
+                </button>
+            </div>
+            
+            <div class="flex justify-center gap-3 mt-6" id="carouselIndicators">
+                </div>
+        </div>
+    </section>
+
+    <section class="px-6 max-w-6xl mx-auto pb-32">
+        <div class="grid lg:grid-cols-3 gap-12 items-start">
+            <div class="lg:col-span-3 space-y-12" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="bg-neoBg shadow-neo-out p-8 md:p-10 rounded-3xl border border-neoLightShadow/10">
+                    <h2 class="text-2xl font-bold mb-6 text-white flex items-center gap-3"><i class="ph-fill ph-info text-neon-s"></i> Overview</h2>
+                    <p class="text-gray-400 leading-relaxed font-medium mb-4">KnotX is a smart environment control system that connects your PC and mobile device into a unified, real-time workspace. By leveraging a shared Wi-Fi or internet connection, it enables seamless communication between devices with minimal setup.Once the desktop application is launched, users can connect their mobile device instantly and access a live screen feed of their PC. The mobile device then functions as a full remote control, allowing users to interact with and manage their system from anywhere.Designed with a modular and lightweight architecture, KnotX simplifies remote control, automation, and multitasking, transforming any smartphone into a powerful control hub for your computer.
+                    <br>
+                    <br>
+                    Setup & Usage: <br>
+
+                        1. Run the KnotX desktop application (.exe) on your PC. <br>
+                        2. Start the server from the desktop interface. <br>
+                        3. Ensure both your PC and mobile device are connected to the same Wi-Fi network or internet. <br>
+                        4. Install and open the KnotX mobile application (.apk) on your phone. <br> 
+                        5. Connect automatically or enter the IP address shown on the PC, or scan the QR code. <br> 
+                        6. Once connected, the mobile device will display a live screen of your PC. <br>
+                        7. Use the mobile interface to control your PC remotely and perform actions in real time. <br>
+                        <br>
+                    Your phone now acts as a complete remote control system for your PC.
+                    </p>
+                </div>
+            </div>
+
+            <div class="lg:col-span-1" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="bg-neoBg shadow-neo-out p-8 rounded-3xl border border-neoLightShadow/10 sticky top-32">
+                    <div class="flex justify-center mb-6"><div class="shadow-neo-in p-6 rounded-full inline-block"><i class="ph-fill ph-android-logo text-5xl text-neon-s"></i></div></div>
+                    <h3 class="text-xl font-bold text-center text-white mb-2">Download App</h3>
+                    <p class="text-xs text-center text-gray-500 font-bold uppercase tracking-widest mb-8">Ready to Install</p>
+                    <div class="shadow-neo-in p-4 rounded-2xl mb-8 space-y-3">
+                        <div class="flex justify-between border-b border-neoLightShadow/30 pb-2"><span class="text-xs text-gray-500 font-bold uppercase">File</span><span class="text-sm font-semibold text-gray-300">KnotX-1.0.0.apk</span></div>
+                        <div class="flex justify-between border-b border-neoLightShadow/30 pb-2"><span class="text-xs text-gray-500 font-bold uppercase">OS</span><span class="text-sm font-semibold text-gray-300">Android 7.0+</span></div>
+                        <div class="flex justify-between"><span class="text-xs text-gray-500 font-bold uppercase">Size</span><span class="text-sm font-semibold text-gray-300">24.8 MB</span></div>
+                    </div>
+                    <a href="https://drive.usercontent.google.com/download?id=1HFu7uWu6sXX16qhaooisxh8oReZN9mGQ&export=download&authuser=0&confirm=t&uuid=81fcf96a-b1c2-49eb-85e4-9fd9c703d1e4&at=ALBwUgk-F2c28AxZ4xYe4hI3ut49:1777406586436" download class="w-full hover-pop shadow-neo-out py-4 rounded-2xl font-extrabold tracking-wider hover-neon-s text-gray-200 transition-all duration-300 flex items-center justify-center gap-2 uppercase text-sm border border-transparent">
+                        Download Now <i class="ph-bold ph-download-simple text-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="lg:col-span-2" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="bg-neoBg shadow-neo-out p-8 rounded-3xl border border-neoLightShadow/10 sticky top-32">
+                    <div class="flex justify-center mb-6"><div class="shadow-neo-in p-6 rounded-full inline-block"><i class="ph-fill ph-windows-logo text-5xl text-neon-s"></i></div></div>
+                    <h3 class="text-xl font-bold text-center text-white mb-2">Download App</h3>
+                    <p class="text-xs text-center text-gray-500 font-bold uppercase tracking-widest mb-8">Ready to Install</p>
+                    <div class="shadow-neo-in p-4 rounded-2xl mb-8 space-y-3">
+                        <div class="flex justify-between border-b border-neoLightShadow/30 pb-2"><span class="text-xs text-gray-500 font-bold uppercase">File</span><span class="text-sm font-semibold text-gray-300">KnotX_1.0.0.exe</span></div>
+                        <div class="flex justify-between border-b border-neoLightShadow/30 pb-2"><span class="text-xs text-gray-500 font-bold uppercase">OS</span><span class="text-sm font-semibold text-gray-300">Windows 10+</span></div>
+                        <div class="flex justify-between"><span class="text-xs text-gray-500 font-bold uppercase">Size</span><span class="text-sm font-semibold text-gray-300">70.2 MB</span></div>
+                    </div>
+                    <a href="https://drive.usercontent.google.com/download?id=1nd0tLtHbeU3W83tCXw2qgmb_PA0PvJUm&export=download&authuser=0&confirm=t&uuid=1c5f0b5d-c3c4-43f6-8a62-5d103bf0773f&at=ALBwUgmGCoNqQ3ZTi9TgzZA26TDn:1777406535299" download class="w-full hover-pop shadow-neo-out py-4 rounded-2xl font-extrabold tracking-wider hover-neon-s text-gray-200 transition-all duration-300 flex items-center justify-center gap-2 uppercase text-sm border border-transparent">
+                        Download Now <i class="ph-bold ph-download-simple text-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+         // 🚀 Carousel Logic
+        const track = document.getElementById('carouselTrack');
+        const slides = Array.from(track.children);
+        const indicatorsContainer = document.getElementById('carouselIndicators');
+        let currentIndex = 0;
+
+        slides.forEach((_, index) => {
+            const dot = document.createElement('button');
+            dot.className = `w-3 h-3 rounded-full transition-all duration-300 ${index === 0 ? 'bg-cyan-400 shadow-[0_0_8px_#0ff]' : 'bg-[#0d0f12] shadow-neo-in'}`;
+            dot.onclick = () => goToSlide(index);
+            indicatorsContainer.appendChild(dot);
+        });
+        const dots = Array.from(indicatorsContainer.children);
+
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            dots.forEach((dot, index) => {
+                dot.className = index === currentIndex 
+                    ? 'w-4 h-3 rounded-full transition-all duration-300 bg-cyan-400 shadow-[0_0_8px_#0ff]' 
+                    : 'w-3 h-3 rounded-full transition-all duration-300 bg-[#0d0f12] shadow-neo-in';
+            });
+            // Auto pause video when sliding away
+            slides.forEach((slide, index) => {
+                const video = slide.querySelector('video');
+                if (video && index !== currentIndex) video.pause();
+            });
+        }
+        function nextSlide() { currentIndex = (currentIndex + 1) % slides.length; updateCarousel(); }
+        function prevSlide() { currentIndex = (currentIndex - 1 + slides.length) % slides.length; updateCarousel(); }
+        function goToSlide(index) { currentIndex = index; updateCarousel(); }
+    </script>
+</body>
+</html>

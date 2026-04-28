@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamDeck-Go | Project Details</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="icon" href="favicon.ico">
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { neoBg: '#16181d', neoDarkShadow: '#0d0f12', neoLightShadow: '#1f2128', }, boxShadow: { 'neo-out': '8px 8px 16px #0d0f12, -8px -8px 16px #1f2128', 'neo-in': 'inset 5px 5px 10px #0d0f12, inset -5px -5px 10px #1f2128', } } }
+        }
+    </script>
+    <style>
+        :root { --color-primary: 0, 255, 255; --color-secondary: 176, 38, 255; }
+        body { background-color: #16181d; color: #a0aec0; overflow-x: hidden; font-family: 'Poppins', sans-serif;}
+        .text-neon-p { color: rgb(var(--color-primary)); text-shadow: 0 0 12px rgba(var(--color-primary), 0.7); }
+        .text-neon-s { color: rgb(var(--color-secondary)); text-shadow: 0 0 12px rgba(var(--color-secondary), 0.7); }
+        .text-gradient-custom { background: linear-gradient(to right, rgb(var(--color-primary)), rgb(var(--color-secondary))); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hover-pop { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); will-change: transform; }
+        .hover-pop:hover { transform: translateY(-6px) scale(1.03); z-index: 10; }
+        .hover-neon-p:hover { box-shadow: 0 10px 25px rgba(var(--color-primary), 0.25), 8px 8px 16px #0d0f12, -8px -8px 16px #1f2128 !important; border-color: rgba(var(--color-primary), 0.4) !important; color: rgb(var(--color-primary)) !important; }
+        /* 🚀 Carousel Transition */
+        .carousel-track { transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl bg-neoBg shadow-neo-out rounded-full px-6 py-4 flex justify-between items-center z-50 border border-neoLightShadow/20">
+        <a href="index.html" class="flex items-center gap-2 text-sm font-bold text-gray-400 hover:text-neon-p transition-colors hover-pop">
+            <i class="ph-bold ph-arrow-left text-lg"></i> Back
+        </a>
+        <a href="index.html" class="text-xl font-bold text-white tracking-wider hover:scale-105 transition-transform duration-300">
+            Soumen<span class="text-neon-p">.dev</span>
+        </a>
+    </nav>
+
+    <section class="pt-40 px-6 max-w-6xl mx-auto text-center" data-aos="fade-up">
+        <div class="shadow-neo-in px-5 py-2 rounded-full w-fit mx-auto text-xs font-bold mb-6 tracking-widest uppercase flex items-center gap-2 text-neon-s">
+            <i class="ph-fill ph-squares-four"></i> Utility System
+        </div>
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 text-white"><span class="text-gradient-custom">StreamDeck-Go</span></h1>
+        <p class="text-gray-400 max-w-3xl mx-auto text-lg mb-8 font-medium">A customizable control dashboard for PC automation and productivity. Map keys, trigger actions, and streamline your workflow with a beautiful neumorphic interface.</p>
+        
+        <div class="flex justify-center gap-3 flex-wrap mb-16">
+            <span class="shadow-neo-out px-4 py-2 rounded-lg text-xs font-bold text-gray-400">Python</span>
+            <span class="shadow-neo-out px-4 py-2 rounded-lg text-xs font-bold text-gray-400">Kotlin</span>
+        </div>
+    </section>
+
+    <section class="px-6 max-w-5xl mx-auto mb-24" data-aos="zoom-in" data-aos-delay="100">
+        <div class="bg-neoBg shadow-neo-in p-4 md:p-6 rounded-[40px] relative">
+            <div class="overflow-hidden rounded-[24px] relative bg-neoDarkShadow/50 aspect-video flex items-center">
+                
+                <div id="carouselTrack" class="carousel-track flex w-full h-full">
+                    <div class="min-w-full h-full flex items-center justify-center shrink-0">
+                        <video controls class="w-full h-full object-cover" poster="https://via.placeholder.com/1280x720/16181d/00ffff?text=Video+Thumbnail">
+                            <source src="demo-video.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="min-w-full h-full flex items-center justify-center shrink-0">
+                        <img src="streamdeck01.jpg" class="max-w-full max-h-full object-contain">
+                    </div>
+                    <div class="min-w-full h-full flex items-center justify-center shrink-0">
+                        <img src="streamdeck02.png" alt="Screenshot 2" class="w-full h-full object-contain mx-auto" alt="Screenshot 2">
+                    </div>
+                </div>
+
+                <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 shadow-neo-out bg-neoBg p-3 rounded-full text-gray-400 hover:text-neon-p hover-neon-p transition-all z-10 hover-pop">
+                    <i class="ph-bold ph-caret-left text-xl"></i>
+                </button>
+                <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 shadow-neo-out bg-neoBg p-3 rounded-full text-gray-400 hover:text-neon-p hover-neon-p transition-all z-10 hover-pop">
+                    <i class="ph-bold ph-caret-right text-xl"></i>
+                </button>
+            </div>
+            
+            <div class="flex justify-center gap-3 mt-6" id="carouselIndicators">
+                </div>
+        </div>
+    </section>
+
+    <section class="px-6 max-w-6xl mx-auto pb-32">
+        <div class="grid lg:grid-cols-3 gap-12 items-start">
+            <div class="lg:col-span-3 space-y-12" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="bg-neoBg shadow-neo-out p-8 md:p-10 rounded-3xl border border-neoLightShadow/10">
+                    <h2 class="text-2xl font-bold mb-6 text-white flex items-center gap-3"><i class="ph-fill ph-info text-neon-p"></i> Overview</h2>
+                    <p class="text-gray-400 leading-relaxed font-medium mb-4">
+                        StreamDeck-Go is a customizable desktop control dashboard designed to simplify PC automation and enhance productivity. It enables users to map shortcuts, launch applications, control system functions, and trigger workflows through an intuitive and visually refined interface.Built with a focus on flexibility and performance, StreamDeck-Go transforms any secondary device into a powerful control hub. Whether managing daily tasks, controlling media, or streamlining complex actions, it provides a seamless and efficient user experience.The application combines a modern neumorphic design with real-time responsiveness, making it both visually engaging and highly functional for developers, creators, and power users.
+                    <br>
+                    <br>
+                    Setup & Usage:<br>
+
+                        1. Run the StreamDeck-Go desktop application (.exe) on your PC and start the server.<br>
+                        2. Install the mobile application (.apk) on your phone. <br>
+                        3. Ensure both your PC and mobile device are connected to the same Wi-Fi network or internet. <br>
+                        4. Once the server starts, the mobile app will automatically detect the PC and connect without needing to enter the IP address manually. <br>
+                        5. You can also connect by scanning the QR code if needed. <br>
+                        6. From the desktop interface, use "Add App" or "Add Link" to create custom shortcuts. <br>
+                        7. Access and trigger these shortcuts directly from your mobile dashboard. <br>
+                        <br>
+                    Once connected, your phone becomes a real-time control panel for your PC.
+                    </p>
+                </div>
+            </div>
+                
+            <div class="lg:col-span-1" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="bg-neoBg shadow-neo-out p-8 rounded-3xl border border-neoLightShadow/10 sticky top-32">
+                    <div class="flex justify-center mb-6"><div class="shadow-neo-in p-6 rounded-full inline-block"><i class="ph-fill ph-android-logo text-5xl text-neon-p"></i></div></div>
+                    <h3 class="text-xl font-bold text-center text-white mb-2">Download App</h3>
+                    <p class="text-xs text-center text-gray-500 font-bold uppercase tracking-widest mb-8">Ready to Install</p>
+                    <div class="shadow-neo-in p-4 rounded-2xl mb-8 space-y-3">
+                        <div class="flex justify-between border-b border-neoLightShadow/30 pb-2"><span class="text-xs text-gray-500 font-bold uppercase">File</span><span class="text-sm font-semibold text-gray-300">StreamDeck-Go_1.0.2.apk</span></div>
+                        <div class="flex justify-between border-b border-neoLightShadow/30 pb-2"><span class="text-xs text-gray-500 font-bold uppercase">OS</span><span class="text-sm font-semibold text-gray-300">Android 7.0+</span></div>
+                        <div class="flex justify-between"><span class="text-xs text-gray-500 font-bold uppercase">Size</span><span class="text-sm font-semibold text-gray-300">12.2 MB</span></div>
+                    </div>
+                    <a href="https://drive.usercontent.google.com/download?id=19HJJksizxUHp7wLdHQRf_wB2MctLZPrV&export=download&authuser=0&confirm=t&uuid=eda8190b-3938-41a9-8fac-8fa3c701f681&at=ALBwUgkSHTJxy34D31D_gI3xWY8r:1777406968674" download class="w-full hover-pop shadow-neo-out py-4 rounded-2xl font-extrabold tracking-wider hover-neon-p text-gray-200 transition-all duration-300 flex items-center justify-center gap-2 uppercase text-sm border border-transparent">
+                        Download Now <i class="ph-bold ph-download-simple text-lg"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-2" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="bg-neoBg justify-content-end shadow-neo-out p-8 rounded-3xl border border-neoLightShadow/10 sticky top-32">
+                    <div class="flex justify-center mb-6"><div class="shadow-neo-in p-6 rounded-full inline-block"><i class="ph-fill ph-windows-logo text-5xl text-neon-p"></i></div></div>
+                    <h3 class="text-xl font-bold text-center text-white mb-2">Download App</h3>
+                    <p class="text-xs text-center text-gray-500 font-bold uppercase tracking-widest mb-8">Ready to Install</p>
+                    <div class="shadow-neo-in p-4 rounded-2xl mb-8 space-y-3">
+                        <div class="flex justify-between border-b border-neoLightShadow/30 pb-2"><span class="text-xs text-gray-500 font-bold uppercase">File</span><span class="text-sm font-semibold text-gray-300">StreamDeck-Go_1.0.1.exe</span></div>
+                        <div class="flex justify-between border-b border-neoLightShadow/30 pb-2"><span class="text-xs text-gray-500 font-bold uppercase">OS</span><span class="text-sm font-semibold text-gray-300">Windows 10/11</span></div>
+                        <div class="flex justify-between"><span class="text-xs text-gray-500 font-bold uppercase">Size</span><span class="text-sm font-semibold text-gray-300">74.3 MB</span></div>
+                    </div>
+                    <a href="https://drive.usercontent.google.com/download?id=1ne7LrOCZEbLYE9_s5sWA_e6OhFoyfOvM&export=download&authuser=0&confirm=t&uuid=4250a297-4643-4a3d-98be-b01269835f2d&at=ALBwUgmdf1bZbDmEc1kVnT8SWWIl:1777406846928" download class="w-full hover-pop shadow-neo-out py-4 rounded-2xl font-extrabold tracking-wider hover-neon-p text-gray-200 transition-all duration-300 flex items-center justify-center gap-2 uppercase text-sm border border-transparent">
+                        Download Now <i class="ph-bold ph-download-simple text-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // 🚀 Carousel Logic
+        const track = document.getElementById('carouselTrack');
+        const slides = Array.from(track.children);
+        const indicatorsContainer = document.getElementById('carouselIndicators');
+        let currentIndex = 0;
+
+        slides.forEach((_, index) => {
+            const dot = document.createElement('button');
+            dot.className = `w-3 h-3 rounded-full transition-all duration-300 ${index === 0 ? 'bg-cyan-400 shadow-[0_0_8px_#0ff]' : 'bg-[#0d0f12] shadow-neo-in'}`;
+            dot.onclick = () => goToSlide(index);
+            indicatorsContainer.appendChild(dot);
+        });
+        const dots = Array.from(indicatorsContainer.children);
+
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            dots.forEach((dot, index) => {
+                dot.className = index === currentIndex 
+                    ? 'w-4 h-3 rounded-full transition-all duration-300 bg-cyan-400 shadow-[0_0_8px_#0ff]' 
+                    : 'w-3 h-3 rounded-full transition-all duration-300 bg-[#0d0f12] shadow-neo-in';
+            });
+            // Auto pause video when sliding away
+            slides.forEach((slide, index) => {
+                const video = slide.querySelector('video');
+                if (video && index !== currentIndex) video.pause();
+            });
+        }
+        function nextSlide() { currentIndex = (currentIndex + 1) % slides.length; updateCarousel(); }
+        function prevSlide() { currentIndex = (currentIndex - 1 + slides.length) % slides.length; updateCarousel(); }
+        function goToSlide(index) { currentIndex = index; updateCarousel(); }
+    </script>
+</body>
+</html>
