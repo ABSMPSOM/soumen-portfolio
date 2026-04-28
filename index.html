@@ -16,7 +16,7 @@
                 extend: {
                     fontFamily: { sans: ['Poppins', 'sans-serif'] },
                     colors: {
-                        neoBg: '#16181d', /* Deep dark background matching your image */
+                        neoBg: '#16181d',
                         neoDarkShadow: '#0d0f12',
                         neoLightShadow: '#1f2128',
                     },
@@ -54,7 +54,7 @@
             transition: all 0.4s ease;
         }
 
-        /* 🚀 NEW: Dynamic Gradient Text */
+        /* 🚀 Dynamic Gradient Text */
         .text-gradient-custom {
             background: linear-gradient(to right, rgb(var(--color-primary)), rgb(var(--color-secondary)));
             -webkit-background-clip: text;
@@ -65,13 +65,14 @@
         /* 🚀 Hover Up & Scale Animation (Pop Effect) */
         .hover-pop {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            will-change: transform;
         }
         .hover-pop:hover {
-            transform: translateY(-6px) scale(1.05);
+            transform: translateY(-8px) scale(1.03);
             z-index: 10;
         }
         .hover-pop:active {
-            transform: translateY(2px) scale(0.95);
+            transform: translateY(2px) scale(0.98);
             box-shadow: inset 5px 5px 10px #0d0f12, inset -5px -5px 10px #1f2128 !important;
         }
 
@@ -98,7 +99,7 @@
             50% { transform: translateY(-5px); }
         }
         .live-float { animation: float 4s ease-in-out infinite; }
-        .live-float:hover { animation-play-state: paused; } /* Pause float on hover */
+        .live-float:hover { animation-play-state: paused; } 
         
         .delay-1 { animation-delay: 0s; }
         .delay-2 { animation-delay: 0.5s; }
@@ -126,18 +127,18 @@
     </div>
 
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl bg-neoBg shadow-neo-out rounded-full px-6 py-4 flex justify-between items-center z-50 border border-neoLightShadow/20">
-        <a href="#" class="text-xl font-bold text-white flex items-center gap-1 tracking-wider">
+        <a href="#" class="text-xl font-bold text-white flex items-center gap-1 tracking-wider inline-block hover:scale-105 transition-transform duration-300">
             Soumen<span class="text-neon-p">.dev</span>
         </a>
         
-        <div class="hidden md:flex gap-8 text-sm font-semibold text-gray-400">
-            <a href="#home" class="hover:text-white transition-colors duration-300">Home</a>
-            <a href="#about" class="hover:text-white transition-colors duration-300">About</a>
-            <a href="#projects" class="hover:text-white transition-colors duration-300">Projects</a>
-            <a href="#services" class="hover:text-white transition-colors duration-300">Services</a>
+        <div class="hidden md:flex gap-8 text-sm font-bold text-gray-400">
+            <a href="#home" class="inline-block transform hover:scale-125 hover:-translate-y-1 hover:text-neon-p transition-all duration-300 origin-bottom">Home</a>
+            <a href="#about" class="inline-block transform hover:scale-125 hover:-translate-y-1 hover:text-neon-s transition-all duration-300 origin-bottom">About</a>
+            <a href="#projects" class="inline-block transform hover:scale-125 hover:-translate-y-1 hover:text-neon-p transition-all duration-300 origin-bottom">Projects</a>
+            <a href="#services" class="inline-block transform hover:scale-125 hover:-translate-y-1 hover:text-neon-s transition-all duration-300 origin-bottom">Services</a>
         </div>
 
-        <a href="#contact" class="hidden sm:block hover-pop shadow-neo-out px-6 py-2 rounded-full text-sm font-bold text-gray-300 hover-neon-p border border-transparent transition-all duration-300">
+        <a href="#contact" class="hidden sm:block hover-pop shadow-neo-out px-6 py-2 rounded-full text-sm font-bold text-gray-300 hover-neon-p border border-transparent">
             Let's Talk
         </a>
     </nav>
@@ -157,10 +158,10 @@
         </p>
 
         <div class="flex flex-wrap justify-center items-center gap-6 mb-16">
-            <a href="#projects" class="hover-pop hover-neon-p shadow-neo-out px-8 py-4 rounded-full font-bold flex items-center gap-2 text-white border border-transparent transition-all duration-300">
+            <a href="#projects" class="hover-pop hover-neon-p shadow-neo-out px-8 py-4 rounded-full font-bold flex items-center gap-2 text-white border border-transparent">
                 View Projects <i class="ph-bold ph-rocket-launch"></i>
             </a>
-            <a href="#about" class="hover-pop shadow-neo-in px-8 py-4 rounded-full text-gray-400 font-bold hover:text-white transition-colors duration-300">
+            <a href="#about" class="hover-pop shadow-neo-in px-8 py-4 rounded-full text-gray-400 font-bold hover:text-white">
                 About me
             </a>
         </div>
@@ -193,39 +194,47 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="bg-neoBg shadow-neo-out p-8 rounded-3xl hover-pop hover-neon-p border border-transparent transition-all duration-400 group">
-                    <div class="shadow-neo-in p-4 rounded-2xl w-fit mb-6"><i class="ph-bold ph-code text-2xl text-neon-p transition-colors duration-300"></i></div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-200">Frontend</h3>
-                    <div class="flex gap-2 flex-wrap">
-                        <span class="shadow-neo-in px-3 py-1.5 rounded-lg text-xs font-bold text-gray-500 cursor-default">HTML</span>
-                        <span class="shadow-neo-in px-3 py-1.5 rounded-lg text-xs font-bold text-gray-500 cursor-default">CSS</span>
-                        <span class="shadow-neo-in px-3 py-1.5 rounded-lg text-xs font-bold text-gray-500 cursor-default">JavaScript</span>
+                <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                    <div class="bg-neoBg shadow-neo-out p-8 rounded-3xl hover-pop hover-neon-p border border-transparent group h-full">
+                        <div class="shadow-neo-in p-4 rounded-2xl w-fit mb-6"><i class="ph-bold ph-code text-2xl text-neon-p"></i></div>
+                        <h3 class="text-xl font-bold mb-4 text-gray-200">Frontend</h3>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-lg text-xs font-bold text-gray-500 cursor-default">HTML</span>
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-lg text-xs font-bold text-gray-500 cursor-default">CSS</span>
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-lg text-xs font-bold text-gray-500 cursor-default">JavaScript</span>
+                        </div>
                     </div>
                 </div>
 
-                <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="bg-neoBg shadow-neo-out p-8 rounded-3xl hover-pop hover-neon-s border border-transparent transition-all duration-400 group mt-0 sm:mt-8">
-                    <div class="shadow-neo-in p-4 rounded-2xl w-fit mb-6"><i class="ph-bold ph-terminal-window text-2xl text-neon-s transition-colors duration-300"></i></div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-200">Programming</h3>
-                    <div class="flex gap-2 flex-wrap">
-                        <span class="shadow-neo-in px-3 py-1.5 rounded-lg text-xs font-bold text-gray-500 cursor-default">Python</span>
+                <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="mt-0 sm:mt-8">
+                    <div class="bg-neoBg shadow-neo-out p-8 rounded-3xl hover-pop hover-neon-s border border-transparent group h-full">
+                        <div class="shadow-neo-in p-4 rounded-2xl w-fit mb-6"><i class="ph-bold ph-terminal-window text-2xl text-neon-s"></i></div>
+                        <h3 class="text-xl font-bold mb-4 text-gray-200">Programming</h3>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-lg text-xs font-bold text-gray-500 cursor-default">Python</span>
+                        </div>
                     </div>
                 </div>
 
-                <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="bg-neoBg shadow-neo-out p-8 rounded-3xl hover-pop hover-neon-p border border-transparent transition-all duration-400 group">
-                    <div class="shadow-neo-in p-4 rounded-2xl w-fit mb-6"><i class="ph-bold ph-device-mobile text-2xl text-neon-p transition-colors duration-300"></i></div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-200">Mobile</h3>
-                    <div class="flex gap-2 flex-wrap">
-                        <span class="shadow-neo-in px-3 py-1.5 rounded-lg text-xs font-bold text-gray-500 cursor-default">Kotlin</span>
-                        <span class="shadow-neo-in px-3 py-1.5 rounded-lg text-xs font-bold text-gray-500 cursor-default">Android</span>
+                <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                    <div class="bg-neoBg shadow-neo-out p-8 rounded-3xl hover-pop hover-neon-p border border-transparent group h-full">
+                        <div class="shadow-neo-in p-4 rounded-2xl w-fit mb-6"><i class="ph-bold ph-device-mobile text-2xl text-neon-p"></i></div>
+                        <h3 class="text-xl font-bold mb-4 text-gray-200">Mobile</h3>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-lg text-xs font-bold text-gray-500 cursor-default">Kotlin</span>
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-lg text-xs font-bold text-gray-500 cursor-default">Android</span>
+                        </div>
                     </div>
                 </div>
 
-                <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="bg-neoBg shadow-neo-out p-8 rounded-3xl hover-pop hover-neon-s border border-transparent transition-all duration-400 group mt-0 sm:mt-8">
-                    <div class="shadow-neo-in p-4 rounded-2xl w-fit mb-6"><i class="ph-fill ph-lightbulb text-2xl text-neon-s transition-colors duration-300"></i></div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-200">Mindset</h3>
-                    <div class="flex gap-2 flex-wrap flex-col items-start">
-                        <span class="shadow-neo-in px-3 py-1.5 rounded-lg text-xs font-bold text-gray-500 cursor-default">Project-based growth</span>
-                        <span class="shadow-neo-in px-3 py-1.5 rounded-lg text-xs font-bold text-gray-500 cursor-default">Always learning</span>
+                <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="mt-0 sm:mt-8">
+                    <div class="bg-neoBg shadow-neo-out p-8 rounded-3xl hover-pop hover-neon-s border border-transparent group h-full">
+                        <div class="shadow-neo-in p-4 rounded-2xl w-fit mb-6"><i class="ph-fill ph-lightbulb text-2xl text-neon-s"></i></div>
+                        <h3 class="text-xl font-bold mb-4 text-gray-200">Mindset</h3>
+                        <div class="flex gap-2 flex-wrap flex-col items-start">
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-lg text-xs font-bold text-gray-500 cursor-default">Project-based growth</span>
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-lg text-xs font-bold text-gray-500 cursor-default">Always learning</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -239,66 +248,72 @@
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="bg-neoBg shadow-neo-out p-8 rounded-3xl hover-pop hover-neon-p border border-transparent transition-all duration-400 group flex flex-col">
-                <div class="flex justify-between items-center mb-8">
-                    <div class="shadow-neo-in p-4 rounded-2xl"><i class="ph-fill ph-squares-four text-3xl text-neon-p transition-colors duration-300"></i></div>
-                    <a href="https://drive.google.com/drive/folders/1JO6revqmF8xSEbFdWZHjyT1S9KmtZ15x?usp=drive_link" class="shadow-neo-out p-3 rounded-full text-gray-500 group-hover:text-white transition-colors neo-btn"><i class="ph-bold ph-arrow-up-right"></i></a>
-                </div>
-                <h3 class="text-2xl font-bold mb-3 text-white">StreamDeck-Go</h3>
-                <p class="text-gray-500 text-sm mb-6 font-medium">A customizable control dashboard for PC automation. Map keys, trigger actions, streamline workflow.</p>
-                
-                <div class="mt-auto flex flex-col gap-5 pt-2">
-                    <div class="flex gap-2 flex-wrap">
-                        <span class="shadow-neo-in px-3 py-1.5 rounded-md text-xs font-bold text-gray-400">Python</span>
-                        <span class="shadow-neo-in px-3 py-1.5 rounded-md text-xs font-bold text-gray-400">Electron</span>
+            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="bg-neoBg shadow-neo-out p-8 rounded-3xl hover-pop hover-neon-p border border-transparent group flex flex-col h-full">
+                    <div class="flex justify-between items-center mb-8">
+                        <div class="shadow-neo-in p-4 rounded-2xl"><i class="ph-fill ph-squares-four text-3xl text-neon-p"></i></div>
+                        <a href="https://drive.google.com/drive/folders/1JO6revqmF8xSEbFdWZHjyT1S9KmtZ15x?usp=drive_link" class="shadow-neo-out p-3 rounded-full text-gray-500 hover:text-white transition-colors neo-btn"><i class="ph-bold ph-arrow-up-right"></i></a>
                     </div>
-                    <div class="flex justify-center">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6fKy9m-KzPCMMfNHB96ZPX5vEpR0CfB58mQ29NTU_vN9dIQ/viewform?usp=sharing&ouid=112128456119275574578" class="shadow-neo-out px-4 py-2 rounded-xl text-gray-500 hover:text-neon-p hover-neon-p transition-all flex items-center gap-2 neo-btn text-xs font-bold" title="Send Feedback via Email">
-                            Feedback <i class="ph-bold ph-chat-teardrop-text text-sm"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="bg-neoBg shadow-neo-out p-8 rounded-3xl hover-pop hover-neon-s border border-transparent transition-all duration-400 group flex flex-col">
-                <div class="flex justify-between items-center mb-8">
-                    <div class="shadow-neo-in p-4 rounded-2xl"><i class="ph-fill ph-link text-3xl text-neon-s transition-colors duration-300"></i></div>
-                    <a href="https://drive.google.com/drive/folders/1REDaJONBT6-eYISrYvvwhUqBjBtvf_c4?usp=drive_link" class="shadow-neo-out p-3 rounded-full text-gray-500 group-hover:text-white transition-colors neo-btn"><i class="ph-bold ph-arrow-up-right"></i></a>
-                </div>
-                <h3 class="text-2xl font-bold mb-3 text-white">KnotX</h3>
-                <p class="text-gray-500 text-sm mb-6 font-medium">A modular desktop tool system designed for productivity and control. Bring scattered utilities into one place.</p>
-                
-                <div class="mt-auto flex flex-col gap-5 pt-2">
-                    <div class="flex gap-2 flex-wrap">
-                        <span class="shadow-neo-in px-3 py-1.5 rounded-md text-xs font-bold text-gray-400">Python</span>
-                        <span class="shadow-neo-in px-3 py-1.5 rounded-md text-xs font-bold text-gray-400">Tkinter</span>
-                    </div>
-                    <div class="flex justify-center">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfDhXGiPeN2hEcyeqx8qr6IrznQGxPaLT2hlFquzOofDfTpwA/viewform?usp=sharing&ouid=112128456119275574578" class="shadow-neo-out px-4 py-2 rounded-xl text-gray-500 hover:text-neon-s hover-neon-s transition-all flex items-center gap-2 neo-btn text-xs font-bold" title="Send Feedback via Email">
-                            Feedback <i class="ph-bold ph-chat-teardrop-text text-sm"></i>
-                        </a>
+                    <h3 class="text-2xl font-bold mb-3 text-white">StreamDeck-Go</h3>
+                    <p class="text-gray-500 text-sm mb-6 font-medium">A customizable control dashboard for PC automation. Map keys, trigger actions, streamline workflow.</p>
+                    
+                    <div class="mt-auto flex flex-col gap-5 pt-2">
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-md text-xs font-bold text-gray-400">Python</span>
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-md text-xs font-bold text-gray-400">Kotlin</span>
+                        </div>
+                        <div class="flex justify-center">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6fKy9m-KzPCMMfNHB96ZPX5vEpR0CfB58mQ29NTU_vN9dIQ/viewform?usp=sharing&ouid=112128456119275574578" target="_blank" class="shadow-neo-out px-4 py-2 rounded-xl text-gray-500 hover:text-white hover-pop hover-neon-p flex items-center gap-2 text-xs font-bold" title="Send Feedback via Google Form">
+                                Feedback <i class="ph-bold ph-chat-teardrop-text text-sm"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="bg-neoBg shadow-neo-out p-8 rounded-3xl hover-pop hover-neon-p border border-transparent transition-all duration-400 group flex flex-col">
-                <div class="flex justify-between items-center mb-8">
-                    <div class="shadow-neo-in p-4 rounded-2xl"><i class="ph-fill ph-graduation-cap text-3xl text-neon-p transition-colors duration-300"></i></div>
-                    <a href="https://drive.google.com/drive/folders/102vjFq1TvCq6342iy6_CIo1ybb2NKsuv?usp=drive_link" class="shadow-neo-out p-3 rounded-full text-gray-500 group-hover:text-white transition-colors neo-btn"><i class="ph-bold ph-arrow-up-right"></i></a>
-                </div>
-                <h3 class="text-2xl font-bold mb-3 text-white">TeacherSphereX</h3>
-                <p class="text-gray-500 text-sm mb-6 font-medium">Android-based teacher management system. Track fees, batches, and student participation easily.</p>
-                
-                <div class="mt-auto flex flex-col gap-5 pt-2">
-                    <div class="flex gap-2 flex-wrap">
-                        <span class="shadow-neo-in px-3 py-1.5 rounded-md text-xs font-bold text-gray-400">Python</span>
-                        <span class="shadow-neo-in px-3 py-1.5 rounded-md text-xs font-bold text-gray-400">Kotlin</span>
-                        <span class="shadow-neo-in px-3 py-1.5 rounded-md text-xs font-bold text-gray-400">SQL</span>
+            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="100">
+                <div class="bg-neoBg shadow-neo-out p-8 rounded-3xl hover-pop hover-neon-s border border-transparent group flex flex-col h-full">
+                    <div class="flex justify-between items-center mb-8">
+                        <div class="shadow-neo-in p-4 rounded-2xl"><i class="ph-fill ph-link text-3xl text-neon-s"></i></div>
+                        <a href="https://drive.google.com/drive/folders/1REDaJONBT6-eYISrYvvwhUqBjBtvf_c4?usp=drive_link" class="shadow-neo-out p-3 rounded-full text-gray-500 hover:text-white transition-colors neo-btn"><i class="ph-bold ph-arrow-up-right"></i></a>
                     </div>
-                    <div class="flex justify-center">
-                        <a href="https://docs.google.com/document/d/1u_c8Wc3BymXtpSj4EL3xYb8oLKqv9Eo8X4SDpZH9d0Q/edit?usp=drive_link" class="shadow-neo-out px-4 py-2 rounded-xl text-gray-500 hover:text-neon-p hover-neon-p transition-all flex items-center gap-2 neo-btn text-xs font-bold" title="Send Feedback via Email">
-                            Feedback <i class="ph-bold ph-chat-teardrop-text text-sm"></i>
-                        </a>
+                    <h3 class="text-2xl font-bold mb-3 text-white">KnotX</h3>
+                    <p class="text-gray-500 text-sm mb-6 font-medium">A modular desktop tool system designed for productivity and control. Bring scattered utilities into one place.</p>
+                    
+                    <div class="mt-auto flex flex-col gap-5 pt-2">
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-md text-xs font-bold text-gray-400">Python</span>
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-md text-xs font-bold text-gray-400">Kotlin</span>
+                        </div>
+                        <div class="flex justify-center">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfDhXGiPeN2hEcyeqx8qr6IrznQGxPaLT2hlFquzOofDfTpwA/viewform?usp=sharing&ouid=112128456119275574578" target="_blank" class="shadow-neo-out px-4 py-2 rounded-xl text-gray-500 hover:text-white hover-pop hover-neon-s flex items-center gap-2 text-xs font-bold" title="Send Feedback via Google Form">
+                                Feedback <i class="ph-bold ph-chat-teardrop-text text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="200">
+                <div class="bg-neoBg shadow-neo-out p-8 rounded-3xl hover-pop hover-neon-p border border-transparent group flex flex-col h-full">
+                    <div class="flex justify-between items-center mb-8">
+                        <div class="shadow-neo-in p-4 rounded-2xl"><i class="ph-fill ph-graduation-cap text-3xl text-neon-p"></i></div>
+                        <a href="https://drive.google.com/drive/folders/102vjFq1TvCq6342iy6_CIo1ybb2NKsuv?usp=drive_link" class="shadow-neo-out p-3 rounded-full text-gray-500 hover:text-white transition-colors neo-btn"><i class="ph-bold ph-arrow-up-right"></i></a>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">TeacherSphereX</h3>
+                    <p class="text-gray-500 text-sm mb-6 font-medium">Android-based teacher management system. Track fees, batches, and student participation easily.</p>
+                    
+                    <div class="mt-auto flex flex-col gap-5 pt-2">
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-md text-xs font-bold text-gray-400">Python</span>
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-md text-xs font-bold text-gray-400">Kotlin</span>
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-md text-xs font-bold text-gray-400">SQL</span>
+                        </div>
+                        <div class="flex justify-center">
+                            <a href="https://docs.google.com/document/d/1u_c8Wc3BymXtpSj4EL3xYb8oLKqv9Eo8X4SDpZH9d0Q/edit?usp=drive_link" target="_blank" class="shadow-neo-out px-4 py-2 rounded-xl text-gray-500 hover:text-white hover-pop hover-neon-p flex items-center gap-2 text-xs font-bold" title="Send Feedback via Google Form">
+                                Feedback <i class="ph-bold ph-chat-teardrop-text text-sm"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -312,35 +327,43 @@
         </div>
 
         <div class="grid md:grid-cols-2 gap-8 text-left">
-            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="bg-neoBg shadow-neo-out p-8 rounded-3xl flex gap-6 items-center hover-pop hover-neon-p border border-transparent transition-all duration-400 cursor-default group">
-                <div class="shadow-neo-in p-5 rounded-2xl shrink-0"><i class="ph-fill ph-globe text-4xl text-neon-p transition-colors duration-300"></i></div>
-                <div>
-                    <h3 class="text-xl font-bold mb-2 text-gray-200">Web Development</h3>
-                    <p class="text-gray-500 text-sm font-medium">Responsive interfaces built with modern web technologies.</p>
+            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="bg-neoBg shadow-neo-out p-8 rounded-3xl flex gap-6 items-center hover-pop hover-neon-p border border-transparent cursor-default group h-full">
+                    <div class="shadow-neo-in p-5 rounded-2xl shrink-0"><i class="ph-fill ph-globe text-4xl text-neon-p"></i></div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-200">Web Development</h3>
+                        <p class="text-gray-500 text-sm font-medium">Responsive interfaces built with modern web technologies.</p>
+                    </div>
                 </div>
             </div>
 
-            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="bg-neoBg shadow-neo-out p-8 rounded-3xl flex gap-6 items-center hover-pop hover-neon-s border border-transparent transition-all duration-400 cursor-default group">
-                <div class="shadow-neo-in p-5 rounded-2xl shrink-0"><i class="ph-fill ph-device-mobile text-4xl text-neon-s transition-colors duration-300"></i></div>
-                <div>
-                    <h3 class="text-xl font-bold mb-2 text-gray-200">Android Apps</h3>
-                    <p class="text-gray-500 text-sm font-medium">Native Android apps in Kotlin — from UI to logic.</p>
+            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="bg-neoBg shadow-neo-out p-8 rounded-3xl flex gap-6 items-center hover-pop hover-neon-s border border-transparent cursor-default group h-full">
+                    <div class="shadow-neo-in p-5 rounded-2xl shrink-0"><i class="ph-fill ph-device-mobile text-4xl text-neon-s"></i></div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-200">Android Apps</h3>
+                        <p class="text-gray-500 text-sm font-medium">Native Android apps in Kotlin — from UI to logic.</p>
+                    </div>
                 </div>
             </div>
             
-            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="bg-neoBg shadow-neo-out p-8 rounded-3xl flex gap-6 items-center hover-pop hover-neon-p border border-transparent transition-all duration-400 cursor-default group">
-                <div class="shadow-neo-in p-5 rounded-2xl shrink-0"><i class="ph-fill ph-wrench text-4xl text-neon-p transition-colors duration-300"></i></div>
-                <div>
-                    <h3 class="text-xl font-bold mb-2 text-gray-200">Python Utilities</h3>
-                    <p class="text-gray-500 text-sm font-medium">Custom desktop tools and system automation scripts.</p>
+            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="bg-neoBg shadow-neo-out p-8 rounded-3xl flex gap-6 items-center hover-pop hover-neon-p border border-transparent cursor-default group h-full">
+                    <div class="shadow-neo-in p-5 rounded-2xl shrink-0"><i class="ph-fill ph-wrench text-4xl text-neon-p"></i></div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-200">Python Utilities</h3>
+                        <p class="text-gray-500 text-sm font-medium">Custom desktop tools and system automation scripts.</p>
+                    </div>
                 </div>
             </div>
 
-            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="bg-neoBg shadow-neo-out p-8 rounded-3xl flex gap-6 items-center hover-pop hover-neon-s border border-transparent transition-all duration-400 cursor-default group">
-                <div class="shadow-neo-in p-5 rounded-2xl shrink-0"><i class="ph-fill ph-layout text-4xl text-neon-s transition-colors duration-300"></i></div>
-                <div>
-                    <h3 class="text-xl font-bold mb-2 text-gray-200">Dashboard UI</h3>
-                    <p class="text-gray-500 text-sm font-medium">Neumorphic & modern dashboard designs.</p>
+            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="bg-neoBg shadow-neo-out p-8 rounded-3xl flex gap-6 items-center hover-pop hover-neon-s border border-transparent cursor-default group h-full">
+                    <div class="shadow-neo-in p-5 rounded-2xl shrink-0"><i class="ph-fill ph-layout text-4xl text-neon-s"></i></div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-200">Dashboard UI</h3>
+                        <p class="text-gray-500 text-sm font-medium">Neumorphic & modern dashboard designs.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -369,7 +392,7 @@
                     <textarea rows="5" required class="w-full bg-neoBg shadow-neo-in border-none rounded-2xl px-6 py-4 text-white font-medium input-glow transition-all duration-300 outline-none resize-none"></textarea>
                 </div>
                 <div class="pt-4 text-center">
-                    <button type="submit" class="hover-pop shadow-neo-out px-12 py-4 rounded-full font-extrabold tracking-wider hover-neon-p border border-transparent text-gray-300 transition-all duration-300 uppercase text-sm">
+                    <button type="submit" class="hover-pop shadow-neo-out px-12 py-4 rounded-full font-extrabold tracking-wider hover-neon-p border border-transparent text-gray-300 uppercase text-sm">
                         Send Message
                     </button>
                 </div>
@@ -382,24 +405,17 @@
         <p class="mt-2 text-xs">&copy; 2026 Soumen. All rights reserved.</p>
     </footer>
 
-    <a href="https://forms.gle/5t8QHtd2dQmjgNB46" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-[90] bg-neoBg shadow-neo-out p-4 rounded-full text-neon-p hover-pop hover-neon-p border border-transparent transition-all duration-300 group flex items-center justify-center" title="Rate my Portfolio!">
+    <a href="https://forms.gle/5t8QHtd2dQmjgNB46" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-[90] bg-neoBg shadow-neo-out p-4 rounded-full text-neon-p hover-pop hover-neon-p border border-transparent group flex items-center justify-center" title="Rate my Portfolio!">
         <i class="ph-fill ph-star text-3xl group-hover:animate-pulse"></i>
     </a>
-
-    <div id="siteFeedbackModal" class="fixed inset-0 z-[200] flex items-center justify-center hidden bg-[#0d0f12]/80 backdrop-blur-md transition-opacity duration-300 opacity-0">
-        <div class="bg-neoBg shadow-neo-out p-8 rounded-[30px] w-[90%] max-w-sm relative border border-neoLightShadow/20 transform scale-95 transition-transform duration-300" id="siteFeedbackContent">
-            
-            
-        </div>
-    </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     
     <script>
-        // 1. Initialize Scroll Animations (AOS)
+        // Initialize Scroll Animations (AOS)
         AOS.init();
 
-        // 2. Theme Customizer Logic
+        // Theme Customizer Logic
         function toggleCustomizer() {
             document.getElementById('customizer').classList.toggle('customizer-open');
         }
