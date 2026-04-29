@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeacherSphereX | Project Details</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="icon" href="favicon.ico">
+    <script src="js/tailwind.config.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="antialiased">
+
+    <button onclick="toggleTheme()" class="fixed bottom-6 left-6 z-[90] bg-neoBg shadow-neo-out p-4 rounded-full text-neon-s hover-pop hover-neon-s border border-transparent group flex items-center justify-center transition-all duration-300" title="Toggle Theme">
+        <i id="theme-icon" class="ph-fill ph-sun text-3xl group-hover:rotate-180 transition-transform duration-500"></i>
+    </button>
+
+    <div id="customizer" class="fixed top-1/3 right-0 translate-x-[120px] z-[100] flex items-center">
+        <button onclick="toggleCustomizer()" class="bg-neoBg shadow-neo-out p-3 rounded-l-2xl text-gray-400 hover:text-white transition">
+            <i class="ph-fill ph-palette text-2xl animate-spin-slow"></i>
+        </button>
+        <div class="bg-neoBg shadow-neo-in p-4 rounded-bl-2xl flex flex-col gap-3 w-[120px]">
+            <p class="text-xs font-bold text-center text-gray-500 uppercase tracking-widest mb-1">Themes</p>
+            <button onclick="setTheme('cyberpunk')" class="w-full py-2 rounded-lg bg-neoBg shadow-neo-out text-xs font-bold text-gray-100 border-b-2 border-[#0ff] hover:brightness-110 transition">Cyberpunk</button>
+            <button onclick="setTheme('matrix')" class="w-full py-2 rounded-lg bg-neoBg shadow-neo-out text-xs font-bold text-gray-100 border-b-2 border-[#00ff64] hover:brightness-110 transition">Matrix</button>
+            <button onclick="setTheme('lava')" class="w-full py-2 rounded-lg bg-neoBg shadow-neo-out text-xs font-bold text-gray-100 border-b-2 border-[#ff5722] hover:brightness-110 transition">Lava</button>
+            <button onclick="setTheme('ice')" class="w-full py-2 rounded-lg bg-neoBg shadow-neo-out text-xs font-bold text-gray-100 border-b-2 border-[#38bdf8] hover:brightness-110 transition">Ice</button>
+        </div>
+    </div>
+
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl bg-neoBg shadow-neo-out rounded-full px-6 py-4 flex justify-between items-center z-50">
+        <a href="index.html" class="flex items-center gap-2 text-sm font-bold text-gradient-custom hover:text-neon-p transition-colors hover:scale-105 transition-transform  duration-300">
+            <i class="ph-bold ph-arrow-left text-lg"></i> Back
+        </a>
+        <a href="index.html" class="text-xl font-bold text-white tracking-wider hover:scale-105 transition-transform duration-300">
+            Soumen<span class="text-neon-p">.dev</span>
+        </a>
+    </nav>
+
+    <section class="pt-40 px-6 max-w-6xl mx-auto text-center" data-aos="fade-up">
+        <div class="shadow-neo-in px-5 py-2 rounded-full w-fit mx-auto text-xs font-bold mb-6 tracking-widest uppercase flex items-center gap-2 text-neon-p">
+            <i class="ph-fill ph-android-logo"></i> Mobile Application
+        </div>
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 text-white"><span class="text-gradient-custom">TeacherSphereX</span></h1>
+        <p class="text-gray-400 max-w-3xl mx-auto text-lg mb-8 font-medium">Android-based teacher management and fee tracking system. Built to simplify student records, payments, and reporting directly from a mobile device.</p>
+        
+        <div class="flex justify-center gap-3 flex-wrap mb-16">
+            <span class="shadow-neo-out px-4 py-2 rounded-lg text-xs font-bold text-gray-400">Kotlin</span>
+            <span class="shadow-neo-out px-4 py-2 rounded-lg text-xs font-bold text-gray-400">Android</span>
+            <span class="shadow-neo-out px-4 py-2 rounded-lg text-xs font-bold text-gray-400">SQLite</span>
+        </div>
+    </section>
+
+    <section class="px-6 max-w-5xl mx-auto mb-24" data-aos="zoom-in" data-aos-delay="100">
+        <div class="bg-neoBg shadow-neo-in p-4 md:p-6 rounded-[40px] relative">
+            <div class="overflow-hidden rounded-[24px] relative bg-neoDarkShadow/50 aspect-video flex items-center">
+                
+                <div id="carouselTrack" class="carousel-track flex w-full h-full">
+                    <div class="min-w-full h-full flex items-center justify-center shrink-0">
+                        <video controls class="w-full h-full object-cover" poster="https://via.placeholder.com/1280x720/16181d/00ffff?text=Video+Thumbnail">
+                            <source src="demo-video.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="min-w-full h-full flex items-center justify-center shrink-0">
+                        <img src="components/teachersphere01.jpg" alt="No Preview Available" class="w-full h-full object-cover">
+                    </div>
+                    <div class="min-w-full h-full flex items-center justify-center shrink-0">
+                        <img src="components/teachersphere02.jpg" alt="No Preview Available" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 shadow-neo-out bg-neoBg p-3 rounded-full text-gray-400 hover:text-neon-p hover-neon-p transition-all z-10 hover-pop">
+                    <i class="ph-bold ph-caret-left text-xl"></i>
+                </button>
+                <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 shadow-neo-out bg-neoBg p-3 rounded-full text-gray-400 hover:text-neon-p hover-neon-p transition-all z-10 hover-pop">
+                    <i class="ph-bold ph-caret-right text-xl"></i>
+                </button>
+            </div>
+            
+            <div class="flex justify-center gap-3 mt-6" id="carouselIndicators">
+                </div>
+        </div>
+    </section>  
+
+    <section class="px-6 max-w-6xl mx-auto pb-32">
+        <div class="grid lg:grid-cols-3 gap-12 items-start">
+            <div class="lg:col-span-2 space-y-12" data-aos="fade-right">
+                <div class="bg-neoBg shadow-neo-out p-8 rounded-3xl border border-transparent group flex flex-col h-full">
+                    <h2 class="text-2xl font-bold mb-6 text-white flex items-center gap-3"><i class="ph-fill ph-info text-neon-p"></i> Overview</h2>
+                    <p class="text-gray-400 leading-relaxed font-medium mb-4">TeacherSphereX is an Android-based teacher management and fee tracking application designed to simplify academic administration. It enables educators to efficiently manage student records, track payments, and monitor overall classroom data directly from a mobile device.With a clean and intuitive interface, the application streamlines daily teaching operations by reducing manual record-keeping and improving data organization. It provides a structured system for handling student information securely and efficiently, making it a practical tool for individual tutors and small educational setups.TeacherSphereX focuses on usability, speed, and reliability, ensuring that essential academic data is always accessible and easy to manage on the go.
+                    <br>
+                    <br>
+                    Note: This project is for sale. Anyone can buy and modify it, but no one can view any type of demo for it.
+                    </p>
+                </div>
+            </div>
+
+            <div class="lg:col-span-1" data-aos="fade-left">
+                <div class="bg-neoBg shadow-neo-out p-8 rounded-3xl border border-transparent group flex flex-col h-full">
+                    <div class="flex justify-center mb-6"><div class="shadow-neo-in p-6 rounded-full inline-block"><i class="ph-fill ph-android-logo text-5xl text-neon-p"></i></div></div>
+                    <h3 class="text-xl font-bold text-center text-white mb-2">Download APK</h3>
+                    <p class="text-xs text-center text-gray-500 font-bold uppercase tracking-widest mb-8">Ready to Install</p>
+                    <div class="shadow-neo-in p-4 rounded-2xl mb-8 space-y-3">
+                        <div class="flex justify-between border-b border-neoLightShadow/30 pb-2"><span class="text-xs text-gray-500 font-bold uppercase">File</span><span class="text-sm font-semibold text-gray-300">TeacherSphereX_v1.0.apk</span></div>
+                        <div class="flex justify-between border-b border-neoLightShadow/30 pb-2"><span class="text-xs text-gray-500 font-bold uppercase">OS</span><span class="text-sm font-semibold text-gray-300">Android 9.0+</span></div>
+                        <div class="flex justify-between"><span class="text-xs text-gray-500 font-bold uppercase">Size</span><span class="text-sm font-semibold text-gray-300">15.4 MB</span></div>
+                    </div>
+                    <a href="#" class="w-full py-4 rounded-2xl font-extrabold tracking-wider text-gray-500 bg-gray-700 cursor-not-allowed opacity-60 flex items-center justify-center gap-2 uppercase text-sm pointer-events-none">
+                        Download APK <i class="ph-bold ph-download-simple text-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center text-gray-600 text-sm font-semibold mt-12 shadow-neo-in border-t border-neoLightShadow/10">
+        <p>Built with <span class="text-neon-s">Neumorphism</span> & <span class="text-neon-p">Neon</span>.</p>
+        <p class="mt-2 text-xs">&copy; 2026 Soumen. All rights reserved.</p>
+    </footer>
+
+    <a href="https://docs.google.com/document/d/1u_c8Wc3BymXtpSj4EL3xYb8oLKqv9Eo8X4SDpZH9d0Q/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-[90] bg-neoBg shadow-neo-out p-4 rounded-full text-neon-p hover-pop hover-neon-p border border-transparent group flex items-center justify-center" title="Rate my Portfolio!">
+        <i class="ph-fill ph-star text-3xl group-hover:animate-pulse"></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

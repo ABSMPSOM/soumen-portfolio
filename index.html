@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soumen Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="js/tailwind.config.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="antialiased">
+    <button onclick="toggleTheme()" class="fixed bottom-6 left-6 z-[90] bg-neoBg shadow-neo-out p-4 rounded-full text-neon-s hover-pop hover-neon-s border border-transparent group flex items-center justify-center transition-all duration-300" title="Toggle Theme">
+        <i id="theme-icon" class="ph-fill ph-sun text-3xl group-hover:rotate-180 transition-transform duration-500"></i>
+    </button>
+
+    <div id="customizer" class="fixed top-1/3 right-0 translate-x-[120px] z-[100] flex items-center">
+        <button onclick="toggleCustomizer()" class="bg-neoBg shadow-neo-out p-3 rounded-l-2xl text-gray-400 hover:text-white transition">
+            <i class="ph-fill ph-palette text-2xl animate-spin-slow"></i>
+        </button>
+        <div class="bg-neoBg shadow-neo-in p-4 rounded-bl-2xl flex flex-col gap-3 w-[120px]">
+            <p class="text-xs font-bold text-center text-gray-500 uppercase tracking-widest mb-1">Themes</p>
+            <button onclick="setTheme('cyberpunk')" class="w-full py-2 rounded-lg bg-neoBg shadow-neo-out text-xs font-bold text-gray-100 border-b-2 border-[#0ff] hover:brightness-110 transition">Cyberpunk</button>
+            <button onclick="setTheme('matrix')" class="w-full py-2 rounded-lg bg-neoBg shadow-neo-out text-xs font-bold text-gray-100 border-b-2 border-[#00ff64] hover:brightness-110 transition">Matrix</button>
+            <button onclick="setTheme('lava')" class="w-full py-2 rounded-lg bg-neoBg shadow-neo-out text-xs font-bold text-gray-100 border-b-2 border-[#ff5722] hover:brightness-110 transition">Lava</button>
+            <button onclick="setTheme('ice')" class="w-full py-2 rounded-lg bg-neoBg shadow-neo-out text-xs font-bold text-gray-100 border-b-2 border-[#38bdf8] hover:brightness-110 transition">Ice</button>
+        </div>
+    </div>
+
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl bg-neoBg shadow-neo-out rounded-full px-6 py-4 flex justify-between items-center z-50">
+        <a href="#" class="text-xl font-bold text-white flex items-center gap-1 tracking-wider inline-block hover:scale-105 transition-transform duration-300">
+            Soumen<span class="animate-aura-ripple">.dev</span>
+        </a>
+        
+        <div class="hidden md:flex gap-8 text-sm font-bold text-gray-400">
+            <a href="#home" class="inline-block transform hover:scale-125 hover:-translate-y-1 hover:text-neon-p transition-all duration-300 origin-bottom">Home</a>
+            <a href="#about" class="inline-block transform hover:scale-125 hover:-translate-y-1 hover:text-neon-s transition-all duration-300 origin-bottom">About</a>
+            <a href="#projects" class="inline-block transform hover:scale-125 hover:-translate-y-1 hover:text-neon-p transition-all duration-300 origin-bottom">Projects</a>
+            <a href="#services" class="inline-block transform hover:scale-125 hover:-translate-y-1 hover:text-neon-s transition-all duration-300 origin-bottom">Services</a>
+        </div>
+
+        <a href="#contact" class="hidden sm:block hover-pop shadow-neo-out px-6 py-2 rounded-full text-sm font-bold text-gray-300 hover-neon-p border border-transparent">
+            Let's Talk
+        </a>
+    </nav>
+
+    <section id="home" class="min-h-screen flex flex-col items-center justify-center pt-32 px-6 text-center relative">
+        <div class="shadow-neo-in px-6 py-2 rounded-full text-xs font-bold mb-8 border border-neoLightShadow/10 tracking-widest uppercase flex items-center gap-2 text-neon-s">
+            <i class="ph-fill ph-lightning"></i> Available for hire
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-gray-100">
+            Hi, I'm <span class="text-neon-p">Soumen</span><br>
+            <span class="text-2xl md:text-4xl text-gray-400 mt-6 block font-semibold">Crafting <span class="text-neon-s">Smart Tools</span> & Systems</span>
+        </h1>
+
+        <p class="text-gray-500 max-w-2xl text-lg mb-12 font-medium leading-relaxed">
+            Multi-skill developer building experiences across the web, Android, and system-based tools. Blending systematic approaches with creative solutions.
+        </p>
+
+        <div class="flex flex-wrap justify-center items-center gap-6 mb-16">
+            <a href="#projects" class="hover-pop hover-neon-p shadow-neo-out px-8 py-4 rounded-full font-bold flex items-center gap-2 text-white border border-transparent">
+                View Projects <i class="ph-bold ph-rocket-launch"></i>
+            </a>
+            <a href="#about" class="hover-pop shadow-neo-in px-8 py-4 rounded-full text-gray-400 font-bold hover:text-white">
+                About me
+            </a>
+        </div>
+
+        <div class="flex gap-4 overflow-x-auto no-scrollbar px-4 pt-4 pb-8 w-full md:justify-center">
+            <span class="live-float delay-1 hover-pop shadow-neo-in px-6 py-3 rounded-full text-sm font-semibold text-gray-400 cursor-default">HTML/CSS</span>
+            <span class="live-float delay-2 hover-pop shadow-neo-in px-6 py-3 rounded-full text-sm font-semibold text-neon-s cursor-default">Tailwind CSS</span>
+            <span class="live-float delay-3 hover-pop shadow-neo-in px-6 py-3 rounded-full text-sm font-semibold text-neon-s cursor-default">Bootstrap 5</span>
+            <span class="live-float delay-4 hover-pop shadow-neo-in px-6 py-3 rounded-full text-sm font-semibold text-gray-400 cursor-default">JavaScript</span>
+            <span class="live-float delay-5 hover-pop shadow-neo-in px-6 py-3 rounded-full text-sm font-semibold text-neon-p cursor-default">Python</span>
+            <span class="live-float delay-6 hover-pop shadow-neo-in px-6 py-3 rounded-full text-sm font-semibold text-neon-s cursor-default">Kotlin</span>
+            <span class="live-float delay-7 hover-pop shadow-neo-in px-6 py-3 rounded-full text-sm font-semibold text-neon-s cursor-default">Prompt Engineering</span>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="text-4xl md:text-5xl font-extrabold mb-8 leading-tight text-white">
+                    Crafting tools<br>
+                    <span class="text-gradient-custom">that solve problems.</span>
+                </h2>
+                <p data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="text-gray-400 mb-6 text-lg font-medium leading-relaxed">
+                   I develop practical web applications, automation systems, and mobile tools that transform ideas into fully functional products. My focus extends beyond design to delivering solutions that are reliable and effective in real-world environments.
+                </p>
+                <p data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="text-gray-400 mb-6 text-lg font-medium leading-relaxed">
+                   With experience in frontend interfaces, backend logic, and system-based tools, I approach each project with a structured problem-solving mindset, ensuring every build is efficient, scalable, and purpose-driven.
+                </p>
+                <p data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="text-gray-400 text-lg font-medium leading-relaxed">
+                   I maintain a project-first approach, where each product is designed to deliver measurable value while continuously strengthening my technical expertise.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                    <div class="bg-neoBg shadow-neo-out p-8 rounded-3xl hover-pop hover-neon-p border border-transparent group h-full">
+                        <div class="shadow-neo-in p-4 rounded-2xl w-fit mb-6"><i class="ph-bold ph-code text-2xl text-neon-p"></i></div>
+                        <h3 class="text-xl font-bold mb-4 text-gray-200">Frontend</h3>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-lg text-xs font-bold text-gray-500 cursor-default">HTML</span>
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-lg text-xs font-bold text-gray-500 cursor-default">CSS</span>
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-lg text-xs font-bold text-gray-500 cursor-default">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="mt-0 sm:mt-8">
+                    <div class="bg-neoBg shadow-neo-out p-8 rounded-3xl hover-pop hover-neon-s border border-transparent group h-full">
+                        <div class="shadow-neo-in p-4 rounded-2xl w-fit mb-6"><i class="ph-bold ph-terminal-window text-2xl text-neon-s"></i></div>
+                        <h3 class="text-xl font-bold mb-4 text-gray-200">Programming</h3>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-lg text-xs font-bold text-gray-500 cursor-default">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                    <div class="bg-neoBg shadow-neo-out p-8 rounded-3xl hover-pop hover-neon-p border border-transparent group h-full">
+                        <div class="shadow-neo-in p-4 rounded-2xl w-fit mb-6"><i class="ph-bold ph-device-mobile text-2xl text-neon-p"></i></div>
+                        <h3 class="text-xl font-bold mb-4 text-gray-200">Mobile</h3>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-lg text-xs font-bold text-gray-500 cursor-default">Kotlin</span>
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-lg text-xs font-bold text-gray-500 cursor-default">Android</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="mt-0 sm:mt-8">
+                    <div class="bg-neoBg shadow-neo-out p-8 rounded-3xl hover-pop hover-neon-s border border-transparent group h-full">
+                        <div class="shadow-neo-in p-4 rounded-2xl w-fit mb-6"><i class="ph-fill ph-lightbulb text-2xl text-neon-s"></i></div>
+                        <h3 class="text-xl font-bold mb-4 text-gray-200">Mindset</h3>
+                        <div class="flex gap-2 flex-wrap flex-col items-start">
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-lg text-xs font-bold text-gray-500 cursor-default">Project-based growth</span>
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-lg text-xs font-bold text-gray-500 cursor-default">Always learning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 px-6 max-w-6xl mx-auto">
+        <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-gray-100 mb-4 drop-shadow-md">Selected Work</h2>
+            <div class="h-1 w-20 mx-auto rounded-full" style="background: rgb(var(--color-primary)); box-shadow: 0 0 10px rgb(var(--color-primary));"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="bg-neoBg shadow-neo-out p-8 rounded-3xl hover-pop hover-neon-p border border-transparent group flex flex-col h-full">
+                    <div class="flex justify-between items-center mb-8">
+                        <div class="shadow-neo-in p-4 rounded-2xl"><i class="ph-fill ph-squares-four text-3xl text-neon-p"></i></div>
+                        <a href="streamdeck.html" class="shadow-neo-out p-3 rounded-full text-gray-500 hover:text-white transition-colors neo-btn"><i class="ph-bold ph-arrow-up-right"></i></a>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">StreamDeck-Go</h3>
+                    <p class="text-gray-500 text-sm mb-6 font-medium">A customizable control dashboard for PC automation. Map keys, trigger actions, streamline workflow.</p>
+                    
+                    <div class="mt-auto flex flex-col gap-5 pt-2">
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-md text-xs font-bold text-gray-400">Python</span>
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-md text-xs font-bold text-gray-400">Kotlin</span>
+                        </div>
+                        <div class="flex justify-center">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6fKy9m-KzPCMMfNHB96ZPX5vEpR0CfB58mQ29NTU_vN9dIQ/viewform?usp=sharing&ouid=112128456119275574578" target="_blank" class="shadow-neo-out px-4 py-2 rounded-xl text-gray-500 hover:text-white hover-pop hover-neon-p flex items-center gap-2 text-xs font-bold" title="Send Feedback via Google Form">
+                                Feedback <i class="ph-bold ph-chat-teardrop-text text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="100">
+                <div class="bg-neoBg shadow-neo-out p-8 rounded-3xl hover-pop hover-neon-s border border-transparent group flex flex-col h-full">
+                    <div class="flex justify-between items-center mb-8">
+                        <div class="shadow-neo-in p-4 rounded-2xl"><i class="ph-fill ph-link text-3xl text-neon-s"></i></div>
+                        <a href="knotx.html" class="shadow-neo-out p-3 rounded-full text-gray-500 hover:text-white transition-colors neo-btn"><i class="ph-bold ph-arrow-up-right"></i></a>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">KnotX</h3>
+                    <p class="text-gray-500 text-sm mb-6 font-medium">A modular desktop tool system designed for productivity and control. Bring scattered utilities into one place.</p>
+                    
+                    <div class="mt-auto flex flex-col gap-5 pt-2">
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-md text-xs font-bold text-gray-400">Python</span>
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-md text-xs font-bold text-gray-400">Kotlin</span>
+                        </div>
+                        <div class="flex justify-center">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfDhXGiPeN2hEcyeqx8qr6IrznQGxPaLT2hlFquzOofDfTpwA/viewform?usp=sharing&ouid=112128456119275574578" target="_blank" class="shadow-neo-out px-4 py-2 rounded-xl text-gray-500 hover:text-white hover-pop hover-neon-s flex items-center gap-2 text-xs font-bold" title="Send Feedback via Google Form">
+                                Feedback <i class="ph-bold ph-chat-teardrop-text text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="200">
+                <div class="bg-neoBg shadow-neo-out p-8 rounded-3xl hover-pop hover-neon-p border border-transparent group flex flex-col h-full">
+                    <div class="flex justify-between items-center mb-8">
+                        <div class="shadow-neo-in p-4 rounded-2xl"><i class="ph-fill ph-graduation-cap text-3xl text-neon-p"></i></div>
+                        <a href="teachersphere.html" class="shadow-neo-out p-3 rounded-full text-gray-500 hover:text-white transition-colors neo-btn"><i class="ph-bold ph-arrow-up-right"></i></a>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">TeacherSphereX</h3>
+                    <p class="text-gray-500 text-sm mb-6 font-medium">Android-based teacher management system. Track fees, batches, and student participation easily.</p>
+                    
+                    <div class="mt-auto flex flex-col gap-5 pt-2">
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-md text-xs font-bold text-gray-400">Python</span>
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-md text-xs font-bold text-gray-400">Kotlin</span>
+                            <span class="shadow-neo-in px-3 py-1.5 rounded-md text-xs font-bold text-gray-400">SQL</span>
+                        </div>
+                        <div class="flex justify-center">
+                            <a href="https://docs.google.com/document/d/1u_c8Wc3BymXtpSj4EL3xYb8oLKqv9Eo8X4SDpZH9d0Q/edit?usp=drive_link" target="_blank" class="shadow-neo-out px-4 py-2 rounded-xl text-gray-500 hover:text-white hover-pop hover-neon-p flex items-center gap-2 text-xs font-bold" title="Send Feedback via Google Form">
+                                Feedback <i class="ph-bold ph-chat-teardrop-text text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 px-6 max-w-6xl mx-auto">
+        <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-gray-100 mb-4 drop-shadow-md">What I Offer</h2>
+            <div class="h-1 w-20 mx-auto rounded-full" style="background: rgb(var(--color-secondary)); box-shadow: 0 0 10px rgb(var(--color-secondary));"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 text-left">
+            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="bg-neoBg shadow-neo-out p-8 rounded-3xl flex gap-6 items-center hover-pop hover-neon-p border border-transparent cursor-default group h-full">
+                    <div class="shadow-neo-in p-5 rounded-2xl shrink-0"><i class="ph-fill ph-globe text-4xl text-neon-p"></i></div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-200">Web Development</h3>
+                        <p class="text-gray-500 text-sm font-medium">Responsive interfaces built with modern web technologies.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="bg-neoBg shadow-neo-out p-8 rounded-3xl flex gap-6 items-center hover-pop hover-neon-s border border-transparent cursor-default group h-full">
+                    <div class="shadow-neo-in p-5 rounded-2xl shrink-0"><i class="ph-fill ph-device-mobile text-4xl text-neon-s"></i></div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-200">Android Apps</h3>
+                        <p class="text-gray-500 text-sm font-medium">Native Android apps in Kotlin — from UI to logic.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="bg-neoBg shadow-neo-out p-8 rounded-3xl flex gap-6 items-center hover-pop hover-neon-p border border-transparent cursor-default group h-full">
+                    <div class="shadow-neo-in p-5 rounded-2xl shrink-0"><i class="ph-fill ph-wrench text-4xl text-neon-p"></i></div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-200">Python Utilities</h3>
+                        <p class="text-gray-500 text-sm font-medium">Custom desktop tools and system automation scripts.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="bg-neoBg shadow-neo-out p-8 rounded-3xl flex gap-6 items-center hover-pop hover-neon-s border border-transparent cursor-default group h-full">
+                    <div class="shadow-neo-in p-5 rounded-2xl shrink-0"><i class="ph-fill ph-layout text-4xl text-neon-s"></i></div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-200">Dashboard UI</h3>
+                        <p class="text-gray-500 text-sm font-medium">Neumorphic & modern dashboard designs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section data-aos="fade-up" data-aos-anchor-placement="top-bottom" id="contact" class="py-24 px-6 max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-gray-100 mb-4 drop-shadow-md">Let's Talk</h2>
+            <div class="h-1 w-20 mx-auto rounded-full" style="background: rgb(var(--color-primary)); box-shadow: 0 0 10px rgb(var(--color-primary));"></div>
+        </div>
+
+        <div class="bg-neoBg shadow-neo-out p-10 md:p-14 rounded-[40px]">
+            <form class="space-y-8" onsubmit="event.preventDefault(); alert('This Feature is disable for some reason.');">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <label class="block text-xs text-gray-500 font-bold uppercase tracking-widest mb-3 pl-2">Your Name</label>
+                        <input type="text" required class="w-full bg-neoBg shadow-neo-in border-none rounded-2xl px-6 py-4 text-white font-medium input-glow transition-all duration-300 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-gray-500 font-bold uppercase tracking-widest mb-3 pl-2">Your Email</label>
+                        <input type="email" required class="w-full bg-neoBg shadow-neo-in border-none rounded-2xl px-6 py-4 text-white font-medium input-glow transition-all duration-300 outline-none">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs text-gray-500 font-bold uppercase tracking-widest mb-3 pl-2">Message</label>
+                    <textarea rows="5" required class="w-full bg-neoBg shadow-neo-in border-none rounded-2xl px-6 py-4 text-white font-medium input-glow transition-all duration-300 outline-none resize-none"></textarea>
+                </div>
+                <div class="pt-4 text-center">
+                    <button type="submit" class="hover-pop shadow-neo-out px-12 py-4 rounded-full font-extrabold tracking-wider hover-neon-p border border-transparent text-gray-300 uppercase text-sm">
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center text-gray-600 text-sm font-semibold mt-12 shadow-neo-in border-t border-neoLightShadow/10">
+        <p>Built with <span class="text-neon-s">Neumorphism</span> & <span class="text-neon-p">Neon</span>.</p>
+        <p class="mt-2 text-xs">&copy; 2026 Soumen. All rights reserved.</p>
+    </footer>
+
+    <a href="https://forms.gle/5t8QHtd2dQmjgNB46" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-[90] bg-neoBg shadow-neo-out p-4 rounded-full text-neon-p hover-pop hover-neon-p border border-transparent group flex items-center justify-center" title="Rate my Portfolio!">
+        <i class="ph-fill ph-star text-3xl group-hover:animate-pulse"></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
